@@ -34,6 +34,14 @@ export default defineConfig({
   server: {
     host: true,
     port: 5173,
+    strictPort: true,
+    // Cloud sandbox preview proxies present arbitrary Host headers; accept all.
+    cors: true,
+    allowedHosts: true,
+    hmr: {
+      // HMR over the same proxy works if we let the client infer the URL.
+      clientPort: undefined,
+    },
   },
   plugins: [
     VitePWA({

@@ -1,0 +1,38 @@
+{
+  "name": "bellwether-cre8-chronicles",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Bellwether: Cre-8 Chronicles — a 2D creature-collection RPG PWA.",
+  "scripts": {
+    "predev": "node scripts/generate-icons.mjs",
+    "dev": "vite",
+    "prebuild": "node scripts/generate-icons.mjs",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint \"src/**/*.{ts,tsx}\" \"tests/**/*.ts\"",
+    "lint:fix": "eslint \"src/**/*.{ts,tsx}\" \"tests/**/*.ts\" --fix",
+    "format": "prettier --write \"src/**/*.{ts,tsx,css,html}\" \"tests/**/*.ts\"",
+    "typecheck": "tsc --noEmit",
+    "generate:icons": "node scripts/generate-icons.mjs"
+  },
+  "dependencies": {
+    "phaser": "^3.80.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "@typescript-eslint/eslint-plugin": "^7.7.0",
+    "@typescript-eslint/parser": "^7.7.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.5",
+    "sharp": "^0.33.3",
+    "vite": "^5.2.10",
+    "vite-plugin-pwa": "^0.20.0",
+    "vitest": "^1.5.2",
+    "workbox-window": "^7.1.0"
+  }
+}

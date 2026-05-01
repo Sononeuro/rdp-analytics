@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no"
+    />
+    <meta name="theme-color" content="#0b1d3a" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="description" content="Bellwether: Cre-8 Chronicles — a 2D creature-collection RPG." />
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Bellwether" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon-180.png" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="./icons/icon-512.png" />
+
+    <title>Bellwether: Cre-8 Chronicles</title>
+
+    <style>
+      :root {
+        color-scheme: dark;
+        --safe-top: env(safe-area-inset-top, 0px);
+        --safe-right: env(safe-area-inset-right, 0px);
+        --safe-bottom: env(safe-area-inset-bottom, 0px);
+        --safe-left: env(safe-area-inset-left, 0px);
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: #0b1d3a;
+        color: #f4f6fb;
+        font-family:
+          system-ui,
+          -apple-system,
+          'Segoe UI',
+          Roboto,
+          Helvetica,
+          Arial,
+          sans-serif;
+        height: 100%;
+        overflow: hidden;
+        overscroll-behavior: none;
+        touch-action: none;
+        -webkit-tap-highlight-color: transparent;
+        user-select: none;
+      }
+      /* Use dynamic viewport units so iOS Safari address bar collapse doesn't clip the canvas. */
+      body {
+        width: 100vw;
+        height: 100dvh;
+      }
+      #game {
+        position: fixed;
+        inset: 0;
+        padding: var(--safe-top) var(--safe-right) var(--safe-bottom) var(--safe-left);
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #game canvas {
+        display: block;
+        max-width: 100%;
+        max-height: 100%;
+        outline: none;
+        touch-action: none;
+      }
+      #boot-fallback {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        text-align: center;
+        padding: 1rem;
+        pointer-events: none;
+      }
+      #boot-fallback.hide {
+        display: none;
+      }
+      #boot-fallback h1 {
+        font-size: 1.25rem;
+        margin: 0;
+        letter-spacing: 0.04em;
+      }
+      #boot-fallback p {
+        margin: 0;
+        opacity: 0.75;
+        font-size: 0.95rem;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation-duration: 0.001ms !important;
+          transition-duration: 0.001ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="game" aria-label="Bellwether game canvas" role="application"></div>
+    <div id="boot-fallback" aria-live="polite">
+      <h1>Bellwether: Cre-8 Chronicles</h1>
+      <p>Loading…</p>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

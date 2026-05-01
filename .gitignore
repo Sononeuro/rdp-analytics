@@ -13,3 +13,12 @@ figures/
 .venv/
 .env
 .DS_Store
+
+# Bellwether game (Vite/Phaser PWA in /game)
+game/node_modules/
+game/dist/
+game/dev-dist/
+game/coverage/
+game/.vite/
+.vercel
+
